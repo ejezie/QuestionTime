@@ -89,7 +89,7 @@ const Question: React.FC<{ id: string }> = ({ id }): React.JSX.Element => {
     setLoading((prev) => ({ ...prev, ["delete"]: true }));
     const isSuccess = await deleteQuestion({ id });
     setLoading((prev) => ({ ...prev, ["delete"]: false }));
-    isSuccess && router.push("/view");
+    isSuccess && router.back();
   };
 
   useEffect(() => {
