@@ -1,3 +1,8 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "react-toastify/dist/ReactToastify.css";
+
 html,
 body {
   padding: 0;
@@ -50,4 +55,48 @@ code {
   font-size: 1.1rem;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+.slide-up {
+  opacity: 0;
+  /* animation-timeline: entry; */
+  animation: slide-up 1500ms forwards, fade-in 500ms forwards;
+  animation-fill-mode: forwards;
+}
+
+.slide-down {
+  opacity: 0;
+  /* animation-timeline: entry; */
+  animation: slide-down 500ms forwards, fade-in 500ms forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(15%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-15%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
 }
