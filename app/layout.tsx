@@ -1,4 +1,5 @@
 import { Poppins } from "next/font/google";
+import type { Metadata } from "next";
 import "./global.css";
 import { Header } from "@/_components";
 import { ToastContainer } from "react-toastify";
@@ -9,7 +10,7 @@ const poppins = Poppins({
   display: "swap",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "QT",
   description: "A simple interface for questions CRUD operation",
 };
@@ -17,7 +18,6 @@ export const metadata = {
 export default function RootLayout({
   children,
   modal,
-  auth,
 }: {
   children: React.ReactNode;
   modal: React.ReactNode;
@@ -29,7 +29,6 @@ export default function RootLayout({
         <ToastContainer />
         <Header />
         {modal}
-        {auth}
         {children}
         <div id="modal-root" />
       </body>
