@@ -7,17 +7,17 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const LoadingButton: React.FC<ButtonProps> = (
-  props
+  {loading, loadingText, ...props}
 ): React.JSX.Element => {
   return (
     <button
       className={`transition-colors bg-blue-600 text-white font-medium px-4 py-2 rounded-[20px] hover:bg-blue-500 disabled:bg-blue-400`}
-      disabled={props.loading || props.disabled}
+      disabled={loading || props.disabled}
       {...props}
     >
-      {props.loading ? (
-        props.loadingText ? (
-          props.loadingText
+      {loading ? (
+        loadingText ? (
+          loadingText
         ) : (
           <div className="w-full flex items-center justify-center">
             <Spinner />

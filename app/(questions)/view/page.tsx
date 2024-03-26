@@ -60,7 +60,7 @@ const ViewPage = () => {
           ))}
         </div>
       ) : loading ? (
-        <div>
+        <div role="status">
           <Spinner />
         </div>
       ) : (

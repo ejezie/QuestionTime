@@ -27,10 +27,12 @@ const Auth: React.FC = (): React.JSX.Element => {
       <div className="center flex-col h-[80vh]">
         <h1 className="text-2xl mb-2">To add questions you need a token</h1>
         <input
+          value={email}
           type="text"
           placeholder="Input Email"
           className="border-gray-300 px-2 py-3 md:w-[60%] w-full border mb-4"
           onChange={(e) => setEmail(e.target.value)}
+          role="value"
         />
         <Button loading={loading} onClick={handleGetToken}>
           Get Token

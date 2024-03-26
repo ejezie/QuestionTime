@@ -7,7 +7,7 @@ export const metadata = {
   title: "App Router",
 };
 
-export default function Page() {
+export default function Home() {
   return (
     <Container className="pt-[2rem] md:pt-0">
       <div className="w-full h-full min-h-[90vh] center md:flex-row flex-col">

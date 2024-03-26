@@ -3,102 +3,63 @@
 exports[`renders homepage unchanged 1`] = `
 <div>
   <div
-    class="container"
+    class="w-full pt-[2rem] md:pt-0"
   >
-    <main>
-      <h1
-        class="title"
-      >
-        Welcome to 
-        <a
-          href="https://nextjs.org"
-        >
-          Next.js!
-        </a>
-      </h1>
-      <p
-        class="description"
-      >
-        Get started by editing 
-        <code>
-          pages/index.js
-        </code>
-      </p>
-      <div
-        class="grid"
-      >
-        <a
-          class="card"
-          href="https://nextjs.org/docs"
-        >
-          <h3>
-            Documentation →
-          </h3>
-          <p>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-        <a
-          class="card"
-          href="https://nextjs.org/learn"
-        >
-          <h3>
-            Learn →
-          </h3>
-          <p>
-            Learn about Next.js in an interactive course with quizzes!
-          </p>
-        </a>
-        <a
-          class="card"
-          href="https://github.com/vercel/next.js/tree/canary/examples"
-        >
-          <h3>
-            Examples →
-          </h3>
-          <p>
-            Discover and deploy boilerplate example Next.js projects.
-          </p>
-        </a>
-        <a
-          class="card"
-          href="https://vercel.com/new"
-        >
-          <h3>
-            Deploy →
-          </h3>
-          <p>
-            Instantly deploy your Next.js site to a public URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-    <footer
-      class="footer"
+    <div
+      class="px-[4vw] max-w-[1440px] mr-auto ml-auto"
     >
-      <a
-        href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        rel="noopener noreferrer"
-        target="_blank"
+      <div
+        class="w-full h-full min-h-[90vh] center md:flex-row flex-col"
       >
-        Powered by
-         
-        <span
-          class="logo"
+        <section
+          class="center flex-col w-full md:w-1/2"
         >
-          <img
-            alt="Vercel Logo"
-            data-nimg="1"
-            decoding="async"
-            height="16"
-            loading="lazy"
-            src="/vercel.svg"
-            style="color: transparent;"
-            width="72"
-          />
-        </span>
-      </a>
-    </footer>
+          <h1
+            class="text-left text-3xl md:text-5xl font-[500] uppercase mb-5 slide-up"
+            style="animation-delay: 1s;"
+          >
+            Create your quiz to ask an audience
+          </h1>
+          <p
+            class="mb-7 text-left text-lg slide-up"
+            style="animation-delay: 1.5s;"
+          >
+            Create interactive queustions designed for a dynamic group of audience, no matter the subject you want to test for knowledge, run a quiz with to get useful insight, or help your project.
+          </p>
+          <a
+            class="w-full start slide-up"
+            href="/view"
+            style="animation-delay: 2s;"
+          >
+            <button
+              class="transition-colors bg-blue-600 text-white font-medium px-4 py-2 rounded-[20px] hover:bg-blue-500 disabled:bg-blue-400"
+            >
+              Get Started, its free to use!
+            </button>
+          </a>
+        </section>
+        <section
+          class="w-full md:w-1/2 center"
+        >
+          <div
+            class="relative flex items-center justify-center w-[30rem] h-[30rem] slide-up"
+            style="animation-delay: 2s;"
+          >
+            <img
+              alt="A visual prompt for the quiz"
+              class="absolute object-contain"
+              data-nimg="fill"
+              decoding="async"
+              loading="lazy"
+              sizes="(max-width: 768px) 70vw, (max-width: 1200px) 40vw, 33vw"
+              src="/_next/image?url=%2Fimages%2Fques.jpg&w=3840&q=50"
+              srcset="/_next/image?url=%2Fimages%2Fques.jpg&w=256&q=50 256w, /_next/image?url=%2Fimages%2Fques.jpg&w=384&q=50 384w, /_next/image?url=%2Fimages%2Fques.jpg&w=640&q=50 640w, /_next/image?url=%2Fimages%2Fques.jpg&w=750&q=50 750w, /_next/image?url=%2Fimages%2Fques.jpg&w=828&q=50 828w, /_next/image?url=%2Fimages%2Fques.jpg&w=1080&q=50 1080w, /_next/image?url=%2Fimages%2Fques.jpg&w=1200&q=50 1200w, /_next/image?url=%2Fimages%2Fques.jpg&w=1920&q=50 1920w, /_next/image?url=%2Fimages%2Fques.jpg&w=2048&q=50 2048w, /_next/image?url=%2Fimages%2Fques.jpg&w=3840&q=50 3840w"
+              style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+            />
+          </div>
+        </section>
+      </div>
+    </div>
   </div>
 </div>
 `;
