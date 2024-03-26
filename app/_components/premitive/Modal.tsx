@@ -20,7 +20,7 @@ const Modal: React.FC<Props> = ({ children }): React.JSX.Element => {
         className="absolute top-0 text-white cursor-pointer"
         onClick={() => router.back()}
       >
-        X
+        x
       </div>
       <div
         className="bg-white w-[90%] slide-down"

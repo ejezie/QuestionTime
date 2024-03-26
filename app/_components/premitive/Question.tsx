@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import Image from "next/image";
 import { remove } from "@/_assets";
 import { addQuestion, deleteQuestion, editQuestion } from "@/_services";
+import { RadioGroup, Radio, TextField } from "@mui/material";
 
 const Question: React.FC<{ id: string }> = ({ id }): React.JSX.Element => {
   const [formData, setFormData] = useState<{
@@ -99,38 +100,53 @@ const Question: React.FC<{ id: string }> = ({ id }): React.JSX.Element => {
   return (
     <Container>
       <div className="h-[90vh] w-full center flex-col">
-        <input
+        <TextField
+          id="outlined-basic"
+          label="Question"
+          variant="outlined"
           value={formData?.question}
           type="text"
           placeholder="Input Question"
           className="border-gray-300 px-2 py-3 md:w-[60%] w-full border mb-4"
           onChange={handleQonChange}
+          sx={{ marginBottom: "20px" }}
         />
         <div className="start flex-col md:w-[60%] w-full mb-2">
-          {(formData?.options as string[])?.map((option: string, idx) => (
-            <div key={option} className="between w-full mb-4">
-              <label>
-                <input type="radio" name="question-options" className="mr-2" />
-                {option}
-              </label>
-              <Image
-                width={20}
-                height={20}
-                alt="remove"
-                src={remove}
-                className="cursor-pointer"
-                onClick={() => handleOption("rm", idx)}
-              />
-            </div>
-          ))}
+          <RadioGroup
+            name="question-options"
+            value={option}
+            className="w-full"
+            onChange={handleInpOptChange}
+          >
+            {(formData?.options as string[])?.map((option: string, idx) => (
+              <div key={option} className="between w-full mb-3">
+                <label className="center">
+                  <Radio value={option} className="mr-2" />
+                  {option}
+                </label>
+                <Image
+                  width={20}
+                  height={20}
+                  alt="remove"
+                  src={remove}
+                  className="cursor-pointer"
+                  onClick={() => handleOption("rm", idx)}
+                />
+              </div>
+            ))}
+          </RadioGroup>
         </div>
         {showInp && (
-          <div className="md:w-[60%] w-full mb-4">
-            <input
+          <div className="md:w-[60%] w-full mb-4 md:between start flex-col md:flex-row">
+            <TextField
+              id="outlined-basic"
+              label="Option"
+              variant="filled"
               value={option}
+              sx={{ marginBottom: "20px" }}
               type="text"
               placeholder="Add Option"
-              className="border-gray-300 p-1 md:w-[60%] w-full border mb-5 mr-2"
+              className="md:w-[60%] w-full border"
               onChange={handleInpOptChange}
             />
             <Button
@@ -141,10 +157,15 @@ const Question: React.FC<{ id: string }> = ({ id }): React.JSX.Element => {
             </Button>
           </div>
         )}
-        <div className="md:w-[60%] w-full start flex flex-wrap gap-2">
-          <Button onClick={() => setShowInp(!showInp)}>Add Options</Button>
+        <div className="md:w-[60%] w-full md:start center flex flex-wrap gap-1">
           <Button
-            className="bg-green-300 rounded-[20px] p-2 w-[60px] text-white ml-2 hover:bg-green-400"
+            className="bg-blue-500 rounded-[20px] p-2 w-[150px] text-white hover:bg-blue-400"
+            onClick={() => setShowInp(!showInp)}
+          >
+            Add Options
+          </Button>
+          <Button
+            className="bg-green-300 rounded-[20px] p-2 w-[150px] text-white hover:bg-green-400"
             onClick={() =>
               dataString ? handleEditQuestion() : handleAddQuestion()
             }
@@ -154,7 +175,7 @@ const Question: React.FC<{ id: string }> = ({ id }): React.JSX.Element => {
           </Button>
           {dataString && (
             <Button
-              className="bg-red-300 rounded-[20px] p-2 w-[65px] text-white ml-2 hover:bg-red-400"
+              className="bg-red-300 rounded-[20px] p-2 w-[150px] text-white hover:bg-red-400"
               onClick={handleDeleteQuestion}
               loading={loading.delete}
             >

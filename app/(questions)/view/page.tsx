@@ -7,6 +7,7 @@ import Link from "next/link";
 import { getQuestions } from "@/_services";
 import Spinner from "@/_components/widgets/Spinner";
 import { usePathname } from "next/navigation";
+import { RadioGroup, Radio, Skeleton, Tooltip } from "@mui/material";
 
 const ViewPage = () => {
   const [data, setData] = useState<{
@@ -39,29 +40,43 @@ const ViewPage = () => {
                 )}`}
                 className="w-full between pb-1 mb-2 cursor-pointer border-b-2 border-white"
               >
-                <h2 className="text-xl">{data[key].question}</h2>
-                <Image width={20} height={20} alt="down" src={edit} />
+                <h2 className="md:text-xl text-lg">{data[key].question}</h2>
+                <Tooltip title="Edit">
+                  <Image width={20} height={20} alt="down" src={edit} />
+                </Tooltip>
               </Link>
               <div className="">
-                {(data[key].options as string[]).map((option) => (
-                  <div key={option}>
-                    <label>
-                      <input
-                        type="radio"
-                        name="question-options"
-                        className="mr-2"
-                      />
+                <RadioGroup
+                  aria-label="question-options"
+                  name="question-options"
+                  className="start w-full"
+                >
+                  {(data[key].options as string[]).map((option, idx) => (
+                    <label className="center" key={option + idx}>
+                      <Radio key={idx} value={option} className="mr-2" />
                       {option}
                     </label>
-                  </div>
-                ))}
+                  ))}
+                </RadioGroup>
               </div>
             </div>
           ))}
         </div>
       ) : loading ? (
-        <div role="status">
-          <Spinner />
+        <div className="center flex-col" role="status">
+          {/* <Spinner /> */}
+          <div className="flex flex-wrap w-full gap-10">
+            {Array(6)
+              .fill(1)
+              .map((_, idx) => (
+                <Skeleton
+                  variant="rectangular"
+                  className="w-full md:w-[48%] p-5 bg-blue-100 rounded-xl"
+                  height={200}
+                  key={idx}
+                />
+              ))}
+          </div>
         </div>
       ) : (
         <div className="center flex-col h-[70vh] w-full">
