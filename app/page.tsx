@@ -3,10 +3,6 @@ import { ques } from "@/_assets";
 import { Button, Container } from "@/_components";
 import Link from "next/link";
 
-export const metadata = {
-  title: "App Router",
-};
-
 export default function Home() {
   return (
     <Container className="pt-[2rem] md:pt-0">

@@ -8,6 +8,10 @@ import { getQuestions } from "@/_services";
 import Spinner from "@/_components/widgets/Spinner";
 import { usePathname } from "next/navigation";
 
+export const metadata = {
+  title: "QT view",
+};
+
 const ViewPage = () => {
   const [data, setData] = useState<{
     [key in string]: { [key in string]: string | string[] };
