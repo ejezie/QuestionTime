@@ -8,7 +8,7 @@ Route groups were used to organize route segments and project files.
 
 ## Deployment
 
-> **Note:** [![Deployed with VERCEL](https://question-time-nu.vercel.app/)]
+> **Note:** https://question-time-nu.vercel.app/
 
 ## How to Use
 
